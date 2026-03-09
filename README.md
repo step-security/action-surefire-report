@@ -1,3 +1,5 @@
+[![StepSecurity Maintained Action](https://raw.githubusercontent.com/step-security/maintained-actions-assets/main/assets/maintained-action-banner.png)](https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions)
+
 # GitHub Action: Process maven surefire reports
 
 ![](https://github.com/step-security/action-surefire-report/workflows/build/badge.svg)

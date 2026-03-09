@@ -14,7 +14,7 @@ const axios =  __nccwpck_require__(7269);
 
 async function validateSubscription() {
     const repoPrivate = github.context?.payload?.repository?.private;
-    const upstream = 'dessant/lock-threads';
+    const upstream = 'ScaCap/action-surefire-report';
     const action = process.env.GITHUB_ACTION_REPOSITORY;
     const docsUrl = 'https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions';
 
