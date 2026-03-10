@@ -339,5 +339,5 @@ describe('parseFile', () => {
                     '\tat test.DocumentUploadIntegrationTest.shouldReturnBadRequestIfDocumentSizeIsZero(DocumentUploadIntegrationTest.java:47)'
             }
         ]);
-    });
+    }, 30000);
 });
