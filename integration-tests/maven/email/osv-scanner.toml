@@ -1,0 +1,3 @@
+[[IgnoredVulns]]
+id = "GHSA-rqfh-9r24-8c9r"
+reason = "assertj-core: dev/test dependency only; not shipped to production"
