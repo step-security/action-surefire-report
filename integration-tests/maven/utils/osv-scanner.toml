@@ -1,0 +1,7 @@
+[[IgnoredVulns]]
+id = "GHSA-2qp4-g3q3-f92w"
+reason = "kotlin-stdlib: dev/test dependency only; not shipped to production"
+
+[[IgnoredVulns]]
+id = "GHSA-cqj8-47ch-rvvq"
+reason = "kotlin-stdlib: dev/test dependency only; not shipped to production"
