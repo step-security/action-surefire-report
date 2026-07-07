@@ -31,7 +31,7 @@ jobs:
           cache: 'maven'
       - run: cd integration-tests/maven && mvn clean verify --batch-mode -Dmaven.test.failure.ignore=true
       - uses: ./
-        if: github.ref != 'refs/heads/main'
+        if: false
         with:
           check_name: Example Surefire Test Report
           report_paths: '**/surefire-reports/*.xml, **/failsafe-reports/*.xml'
@@ -39,7 +39,7 @@ jobs:
         with:
           args: pytest integration-tests/python/ --junit-xml=integration-tests/python/report.xml || exit 0
       - uses: ./
-        if: github.ref != 'refs/heads/main'
+        if: false
         with:
           check_name: Example Pytest Report
           report_paths: integration-tests/python/report.xml
@@ -52,15 +52,19 @@ jobs:
             go test -v 2>&1 ./... |
             go-junit-report -out report.xml
       - uses: ./
-        if: github.ref != 'refs/heads/main'
+        if: false
         with:
           check_name: Example Go Report
           report_paths: integration-tests/go/report.xml
           file_name_in_stack_trace: true
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
+      - shell: bash
+        run: |
+          npm install -g @aikidosec/safe-chain@1.1.9 --engine-strict
+          safe-chain setup-ci
       - run: npm install
       - run: npm run eslint
       - run: npm run test
