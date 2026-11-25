@@ -45,7 +45,7 @@ Caused by: java.lang.IllegalArgumentException: Amount must have max 2 non-zero d
             null,
             'action.surefire.report.calc.StringUtilsTest',
             `
-java.lang.AssertionError:
+java.lang.AssertionError: 
 
 Expected: (an instance of java.lang.IllegalArgumentException and exception with message a string containing "This is unexpected")
      but: exception with message a string containing "This is unexpected" message was "Input='' didn't match condition."
@@ -207,9 +207,9 @@ describe('parseFile', () => {
                 annotation_level: 'failure',
                 title: 'string_test.go.TestFailing',
                 message: 'Failed',
-                raw_details: expect.stringMatching(new RegExp(`string_test.go:7:
+                raw_details: expect.stringMatching(new RegExp(`string_test.go:7: 
 \\s*Error Trace:.*action-surefire-report/integration-tests/go/utils/string_test.go:7
-\\s*Error:     \\s*Not equal:
+\\s*Error:     \\s*Not equal: 
 \\s*expected: "1"
 \\s*actual  : "2"
 \\s*
