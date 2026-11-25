@@ -13,7 +13,6 @@ module.exports = [{
 }, ...compat.extends('eslint:recommended'), {
     languageOptions: {
         globals: {
-            ...globals.commonjs,
             ...globals.node,
             ...globals.jest,
             Atomics: 'readonly',
@@ -21,7 +20,7 @@ module.exports = [{
         },
 
         ecmaVersion: 2020,
-        sourceType: 'commonjs',
+        sourceType: 'module',
     },
 
     rules: {

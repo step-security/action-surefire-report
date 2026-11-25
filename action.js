@@ -1,10 +1,11 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const { Octokit } = require("@octokit/rest");
-const { retry } = require("@octokit/plugin-retry");
+import core from '@actions/core';
+import * as github from '@actions/github';
+import { Octokit } from '@octokit/rest';
+import { retry } from '@octokit/plugin-retry';
+import { parseTestReports } from './utils.js';
+import axios from 'axios';
+
 const RetryingOctokit = Octokit.plugin(retry);
-const { parseTestReports } = require('./utils.js');
-const axios =  require('axios');
 
 async function validateSubscription() {
     const repoPrivate = github.context?.payload?.repository?.private;
@@ -18,7 +19,7 @@ async function validateSubscription() {
     if (repoPrivate === false) core.info('\u001b[32m\u2713 Free for public repositories\u001b[0m');
     core.info(`\u001b[36mLearn more:\u001b[0m ${docsUrl}`);
     core.info('');
-  
+
     if (repoPrivate === false) return;
     const serverUrl = process.env.GITHUB_SERVER_URL || 'https://github.com';
     const body = { action: action || '' };
@@ -147,4 +148,4 @@ const action = async () => {
     }
 };
 
-module.exports = action;
+export default action;

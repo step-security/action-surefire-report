@@ -1,7 +1,7 @@
-const glob = require('@actions/glob');
-const core = require('@actions/core');
-const fs = require('fs');
-const parser = require('xml-js');
+import * as glob from '@actions/glob';
+import core from '@actions/core';
+import fs from 'fs';
+import parser from 'xml-js';
 
 const resolveFileAndLine = (file, classname, output, isFilenameInOutput) => {
     // extract filename from classname and remove suffix
@@ -155,4 +155,4 @@ const parseTestReports = async (reportPaths, isFilenameInStackTrace, ignoreFlaky
     return {count, skipped, annotations};
 };
 
-module.exports = { resolveFileAndLine, resolvePath, parseFile, parseTestReports };
+export { resolveFileAndLine, resolvePath, parseFile, parseTestReports };

@@ -1,5 +1,5 @@
-const core = require('@actions/core');
-const action = require('./action');
+import core from '@actions/core';
+import action from './action.js';
 
 (async () => {
     try {

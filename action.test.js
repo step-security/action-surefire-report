@@ -1,14 +1,15 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const nock = require('nock');
-const action = require('./action');
-const {
+import { jest } from '@jest/globals';
+import core from '@actions/core';
+import * as github from '@actions/github';
+import nock from 'nock';
+import action from './action.js';
+import {
     finishedWithFailures,
     finishedSuccess,
     nothingFound,
     nothingFoundButSuccess,
     masterSuccess
-} = require('./action.test.fixtures');
+} from './action.test.fixtures.js';
 
 jest.setTimeout(20000);
 
@@ -175,8 +176,8 @@ describe('action should work', () => {
         scope.done();
 
         expect(request).toStrictEqual(masterSuccess);
-    });    
-    
+    });
+
     it('should not send report on skip_publishing', async () => {
         inputs.skip_publishing = 'true';
 
