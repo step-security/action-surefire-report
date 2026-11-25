@@ -100,8 +100,7 @@ const finishedWithFailures = {
                     "action.surefire.report.email.InvalidEmailAddressException: Invalid email address '.user@host.com'\n\tat action.surefire.report.email.EmailAddressTest.expectException(EmailAddressTest.java:74)\n\tat action.surefire.report.email.EmailAddressTest.shouldNotAllowDotsInWeirdPlaces(EmailAddressTest.java:66)"
             },
             {
-                path:
-                    'integration-tests/maven/evil_twins/src/test/java/action/surefire/report/twin/second/TwinTest.java',
+                path: 'integration-tests/maven/evil_twins/src/test/java/action/surefire/report/twin/second/TwinTest.java',
                 start_line: 13,
                 end_line: 13,
                 start_column: 0,
@@ -226,7 +225,7 @@ const nothingFoundButSuccess = {
     }
 };
 
-module.exports = {
+export {
     finishedWithFailures,
     finishedSuccess,
     nothingFound,
